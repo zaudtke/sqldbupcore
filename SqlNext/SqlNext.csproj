@@ -3,6 +3,37 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <UserSecretsId>3AECBD43-C817-4313-B336-3761C04806D9</UserSecretsId>
   </PropertyGroup>
+
+
+  <ItemGroup>
+    <None Remove="idempotent\vw_Unit.sql" />
+    <None Remove="migrations\v0001\20171114100704_CreateEmployeeTable.sql" />
+    <None Remove="migrations\v0001\20171114100744_AddIndex_Name_ToEmployeeTable.sql" />
+    <None Remove="migrations\v0001\20171114103056_CreateUnitTable.sql" />
+   
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="idempotent\vw_Unit.sql" />
+    <EmbeddedResource Include="migrations\v0001\20171114100704_CreateEmployeeTable.sql" />
+    <EmbeddedResource Include="migrations\v0001\20171114100744_AddIndex_Name_ToEmployeeTable.sql" />
+    <EmbeddedResource Include="migrations\v0001\20171114103056_CreateUnitTable.sql" />
+  
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="dbup4-sqlserver" Version="4.0.0-beta0003">
+    </PackageReference>
+   <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="2.0.0" /> 
+        <PackageReference Include="System.Data.SqlClient" Version="4.4.0" />
+</ItemGroup>
+    <ItemGroup>
+        <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
+    </ItemGroup>
 
 </Project>
