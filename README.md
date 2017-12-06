@@ -28,13 +28,13 @@ If you delete the Data Volume container, you will lose all data.
 ## Terminal Work
 1. From Project Root (where csproj file is) run `dotnet restore`
 2. From Project Root (where newmigration.sh is) run `chmod +x ./newmigration.sh`
-3. From Project Root (where csproj file is) run `dotnet user-secrets localdbconnection "<your connection string here">`
+3. From Project Root (where csproj file is) run `dotnet user-secrets localdbconnection "<your connection string here>"`
 
 ## Code Editing
 
 You can use either VS for Mac or VS Code.  I prefer VS Code due to better syntax highlighting for sql files, but both will work.
 
-There is a manual piece to adding '.sql' files as Embedded Resources.  Easier in VS for Mac, but not much.
+There is a manual piece to adding `.sql` files as Embedded Resources.  Easier in VS for Mac, but not much.
 
 ## Adding new Scripts
 
@@ -45,9 +45,9 @@ For Migration scripts we need to use the terminal.
 2. run ./newmigration version name
   * version is current version folder.  Must exist
   * name is a friendly name for the script.  Enclose in quotes if spaces in name
-  * this uses UTC timestamps for the first part of the name.  This is *Absolutely necessary to keep order, and the reason for the script.
+  * this uses UTC timestamps for the first part of the name.  This is **Absolutely** necessary to keep order, and the reason for the script.
 
-Whichever type of file was added it, needs to be marked as an embeded resource in the `.csproj` file.
+Whichever type of file was added, it needs to be marked as an embeded resource in the `.csproj` file.
 
 VS for Mac
 * Right Click In Solution Explorer where you want the file chose `Add Files...`
